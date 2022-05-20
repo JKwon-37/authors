@@ -21,7 +21,7 @@ module.exports = {
             })
             .catch(err => {
                 console.log("DB ERROR creating Author!");
-                return res.json(err)
+                return res.status(400).json(err)
             })
     },
 
@@ -41,7 +41,7 @@ module.exports = {
             new: true, runValidators: true
         })
             .then(updatedAuthor => res.json(updatedAuthor))
-            .catch(err => res.json(err))
+            .catch(err => res.status(400).json(err))
     },
 
     //DELETE
